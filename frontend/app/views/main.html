@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h1>TEST LOGIN</h1>
+        <form role="form" name="inquiryForm" novalidate style="min-height: 250px" ng-submit="onLogin()">
+        <br style="clear:both">
+                    <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
+
+					<div class="form-group">
+						<input name="email" ng-model="email" id="eml" type="text" ng-pattern="eml_add" ng-required="true" autocomplete="off" placeholder="Email" class="form-control" >
+            
+            <span class="red-text" ng-if="inquiryForm.email.$error.required && inquiryForm.email.$dirty">Email es requerido</span>
+            
+            <span class="red-text" ng-show="inquiryForm.email.$error.pattern">Correo invalido</span>
+					</div>
+					<div class="form-group">
+						<input name="contact" ng-model="contact" id="c_num" type="text" ng-minlength="6" ng-required="true" ng-maxlength="255" autocomplete="off" placeholder="Password" type="password" class="form-control">
+            <span class="red-text" ng-if="inquiryForm.contact.$error.required && inquiryForm.contact.$dirty">El password es requerido</span>
+            <span class="red-text" ng-show="inquiryForm.contact.$error.maxlength">Un maximo de 255 caracteres</span>
+            <span class="red-text" ng-show="inquiryForm.contact.$error.minlength">Un minimo de 6 caracteres</span>
+
+					</div>
+
+        <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
+        <br/>
+        <div class="text-center" ng-show="isNotFountUser">
+            Usuario no encontrado
+        </div>
+
+        </form>
+
+
+</div>
+
+
